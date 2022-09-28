@@ -3,6 +3,7 @@ body{
     margin: 0;
     box-sizing: border-box;
     width: 100vw;
+    /* overflow-x: hidden; */
 
 }
 .CryptocurrencyTracker-container{
@@ -11,8 +12,10 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 2rem;
-    width: 100vw;
+    /* padding: 5rem; */
+    /* width: 100%; */
+    /* margin: 2rem; */
+    overflow-x: hidden;
 
 }
 .CryptocurrencyTracker-title{
@@ -24,13 +27,16 @@ body{
 .cryptoItem-container{
     display: flex;
     flex-direction: column;
-    padding-top: 5rem;
+    padding-top: 1rem;
     padding-left: 4rem;
     padding-right: 4rem;
+    border: 1px solid #00e7ff;
+    margin: 2rem;
+    overflow-x:none ;
 }
 nav{
     height: 3rem;
-    width: 100vw;
+    width: 70vw;
     background-color: #092e33;
     color: white;
     display: flex;
@@ -43,4 +49,7 @@ nav{
 .usd-euro{
     display: flex;
     gap: 4rem;
+}
+.kk{
+    color: red;
 }

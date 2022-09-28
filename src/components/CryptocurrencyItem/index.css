@@ -2,8 +2,25 @@
 .CryptocurrencyItem-container{
     color: white;
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    padding-left: 4rem;
-    padding-right: 4rem;
+    /* flex-direction: column; */
+    justify-content: space-between;
+
+}
+.bit-coin-logo{
+    width: 2rem;
+height: 2rem;
+}
+.logo-coinName-container{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2rem;
+}
+.curency-container{
+    display: flex;
+    gap: 3rem;
+    padding-right: 1rem;
+    /* align-items: start; */
+    /* align-items: center; */
+
 }

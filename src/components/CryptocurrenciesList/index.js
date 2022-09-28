@@ -1,11 +1,13 @@
 // Write your JS code here
 import React, {Component} from 'react'
 import './index.css'
+import Loader from 'react-loader-spinner'
 import CryptocurrencyItem from '../CryptocurrencyItem'
 
 class CryptocurrenciesList extends Component {
   state = {
     CryptocurrencyList: [],
+    isCryptocurrency: true,
   }
 
   componentDidMount() {
@@ -26,32 +28,43 @@ class CryptocurrenciesList extends Component {
       currencyLogo: eachItem.currency_logo,
     }))
     console.log(updatedData)
-    this.setState({CryptocurrencyList: updatedData})
+    this.setState({CryptocurrencyList: updatedData, isCryptocurrency: false})
     console.log(CryptocurrenciesList)
   }
 
   render() {
-    const {CryptocurrencyList} = this.state
+    const {CryptocurrencyList, isCryptocurrency} = this.state
     return (
       <div className="CryptocurrencyTracker-container">
-        <h1 className="CryptocurrencyTracker-title"> CryptocurrencyTracker </h1>
+        <h1 className="CryptocurrencyTracker-title">Cryptocurrency Tracker</h1>
         <img
           className="cryptocurrency-img"
           src="https://assets.ccbp.in/frontend/react-js/cryptocurrency-bg.png "
-          alt="img"
+          alt="cryptocurrency"
         />
-        <div className="cryptoItem-container">
-          <nav>
-            <h1>Coin Type</h1>
-            <div className="usd-euro">
-              <h2>USD</h2>
-              <h2>EURO</h2>
+        {isCryptocurrency ? (
+          <div>
+            <Loader type="Rings" color="#ffffff" height={80} width={80} />
+          </div>
+        ) : (
+          <>
+            {' '}
+            <div className="cryptoItem-container">
+              <nav>
+                <h1>Coin Type</h1>
+                <div className="usd-euro">
+                  <h2>USD</h2>
+                  <h2>EURO</h2>
+                </div>
+              </nav>
+              <ul>
+                {CryptocurrencyList.map(eachItem => (
+                  <CryptocurrencyItem details={eachItem} key={eachItem.id} />
+                ))}
+              </ul>
             </div>
-          </nav>
-          {CryptocurrencyList.map(eachItem => (
-            <CryptocurrencyItem details={eachItem} key={eachItem.id} />
-          ))}
-        </div>
+          </>
+        )}
       </div>
     )
   }
