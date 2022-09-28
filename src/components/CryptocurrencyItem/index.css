@@ -1,0 +1,9 @@
+/* Write your CSS code here */
+.CryptocurrencyItem-container{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-left: 4rem;
+    padding-right: 4rem;
+}
